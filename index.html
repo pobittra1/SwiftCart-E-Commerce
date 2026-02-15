@@ -69,7 +69,10 @@
     <!-- header section end here -->
 
     <!-- main section start here -->
-    <main class="px-4">
+    <main class="px-4 flex flex-col gap-20">
+
+
+        <!-- hero/banner section start here -->
         <section class="hero-sec relative">
             <img src="./assets/hero-image.png" alt="" class="w-full h-full object-cover">
             <div class="absolute inset-0 bg-black/50"></div>
@@ -79,6 +82,74 @@
                 <button class="btn btn-primary mt-4 text-sm md:text-2xl">Shop Now</button>
             </div>
         </section>
+        <!-- hero/banner section end here -->
+
+        <!-- features section start here -->
+        <section class="features-sec flex flex-col items-center gap-4 w-10/12 mx-auto">
+            <h2 class="features-title text-4xl capitalize">why choose us</h2>
+            <h3 class="text-slate-700 text-center">we provide the best services here about the shopping experience.</h3>
+            <div class="features-cards grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 mt-8 gap-4 space-y-6">
+                <!-- each card -->
+                <div class="relative bg-white rounded-2xl shadow-md hover:shadow-xl transition duration-300 p-6">
+                    <!-- Icon -->
+                    <div class=" absolute -top-6 left-6 bg-blue-100 inline-block p-2 mb-2 rounded-sm">
+                        <i class="fa-solid fa-truck"></i>
+                    </div>
+                    <!-- Title -->
+                    <h3 class="text-xl font-semibold capitalize mb-2">
+                        Fast Delivery
+                    </h3>
+                    <!-- Description -->
+                    <p class="text-gray-700 text-sm leading-relaxed">
+                        Get your orders delivered to your doorstep quickly and efficiently.
+                    </p>
+                </div>
+                <div class="relative bg-white rounded-2xl shadow-md hover:shadow-xl transition duration-300 p-6">
+                    <!-- Icon -->
+                    <div class=" absolute -top-6 left-6 bg-blue-100 inline-block p-2 mb-2 rounded-sm">
+                        <i class="fa-solid fa-headphones"></i>
+                    </div>
+                    <!-- Title -->
+                    <h3 class="text-xl font-semibold capitalize mb-2">
+                        24/7 supports
+                    </h3>
+                    <!-- Description -->
+                    <p class="text-gray-700 text-sm leading-relaxed">
+                        Our support team is available around the clock to assist you.
+                    </p>
+                </div>
+                <div class="relative bg-white rounded-2xl shadow-md hover:shadow-xl transition duration-300 p-6">
+                    <!-- Icon -->
+                    <div class=" absolute -top-6 left-6 bg-blue-100 inline-block p-2 mb-2 rounded-sm">
+                        <i class="fa-solid fa-shield-heart"></i>
+                    </div>
+                    <!-- Title -->
+                    <h3 class="text-xl font-semibold capitalize mb-2">
+                        secure payment
+                    </h3>
+                    <!-- Description -->
+                    <p class="text-gray-700 text-sm leading-relaxed">
+                        Experience save and secure transactions with our encrypted payment systems.
+                    </p>
+                </div>
+                <div class="relative bg-white rounded-2xl shadow-md hover:shadow-xl transition duration-300 p-6">
+                    <!-- Icon -->
+                    <div class=" absolute -top-6 left-6 bg-blue-100 inline-block p-2 mb-2 rounded-sm">
+                        <i class="fa-solid fa-arrows-rotate"></i>
+                    </div>
+                    <!-- Title -->
+                    <h3 class="text-xl font-semibold capitalize mb-2">
+                        easy returns
+                    </h3>
+                    <!-- Description -->
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Not satisfied? return your products easily within 10 days.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+        <!-- features section end here -->
     </main>
     <!-- main section end here -->
 
