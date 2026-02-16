@@ -11,7 +11,7 @@ const displayAllProducts = (data) => {
     const cardsContainer = document.getElementById("cards-container");
     cardsContainer.innerHTML = "";
 
-    data.forEach(eachData => {
+    data.forEach(eachCard => {
         /*
           {
     "id": 1,
@@ -36,25 +36,25 @@ const displayAllProducts = (data) => {
         card.innerHTML = `
          <!-- img -->
                     <div class="overflow-hidden">
-                        <img src="${eachData?.image}" alt="Product"
+                        <img src="${eachCard?.image}" alt="Product"
                             class="w-full h-64 object-cover group-hover:scale-110 transition duration-500">
                     </div>
                     <!-- content -->
                     <div class="p-5 space-y-3">
                         <!-- category and rating -->
                         <div class="flex justify-between text-sm text-gray-500">
-                            <span class="capitalize">${eachData?.category}</span>
-                            <span class="text-yellow-500 font-medium">⭐ ${eachData.rating.rate} (${eachData.rating.count})</span>
+                            <span class="capitalize">${eachCard?.category}</span>
+                            <span class="text-yellow-500 font-medium">⭐ ${eachCard.rating.rate} (${eachCard.rating.count})</span>
                         </div>
 
                         <!-- product name -->
                         <h3 class="text-lg font-semibold capitalize hover:text-pink-600 transition">
-                            ${eachData.title}
+                            ${eachCard.title}
                         </h3>
 
                         <!-- price -->
                         <p class="font-bold text-xl">
-                            $${eachData.price}
+                            $${eachCard.price}
                         </p>
 
                         <!-- buttons -->
