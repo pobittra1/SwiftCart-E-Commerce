@@ -11,7 +11,20 @@ const displayAllProducts = (data) => {
     const cardsContainer = document.getElementById("cards-container");
     cardsContainer.innerHTML = "";
 
-    data.forEach(eachdata => {
+    data.forEach(eachData => {
+        /*
+          {
+    "id": 1,
+    "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+    "price": 109.95,
+    "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+    "category": "men's clothing",
+    "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png",
+    "rating": {
+      "rate": 3.9,
+      "count": 120
+    }
+        */
         //create each single card
         const card = document.createElement("div");
         card.classList.add(
@@ -23,25 +36,25 @@ const displayAllProducts = (data) => {
         card.innerHTML = `
          <!-- img -->
                     <div class="overflow-hidden">
-                        <img src="./assets/trending/trending-one.jpg" alt="Product"
+                        <img src="${eachData?.image}" alt="Product"
                             class="w-full h-64 object-cover group-hover:scale-110 transition duration-500">
                     </div>
                     <!-- content -->
                     <div class="p-5 space-y-3">
                         <!-- category and rating -->
                         <div class="flex justify-between text-sm text-gray-500">
-                            <span class="capitalize">Men's Clothing</span>
-                            <span class="text-yellow-500 font-medium">⭐ 4.8 (280)</span>
+                            <span class="capitalize">${eachData?.category}</span>
+                            <span class="text-yellow-500 font-medium">⭐ ${eachData.rating.rate} (${eachData.rating.count})</span>
                         </div>
 
                         <!-- product name -->
                         <h3 class="text-lg font-semibold capitalize hover:text-pink-600 transition">
-                            Mens Casual Drop Tshirt
+                            ${eachData.title}
                         </h3>
 
                         <!-- price -->
                         <p class="font-bold text-xl">
-                            $25.10
+                            $${eachData.price}
                         </p>
 
                         <!-- buttons -->
