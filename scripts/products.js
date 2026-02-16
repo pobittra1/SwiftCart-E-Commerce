@@ -13,7 +13,7 @@ const displayEachCategory = (categories) => {
     categoriesContainer.innerHTML = "";
     // add all box button
     const allBox = document.createElement("li");
-    allBox.innerHTML = `<a class="btn btn-outline">All</a>`;
+    allBox.innerHTML = `<a class="btn btn-outline" onclick="loadAllProducts()">All</a>`;
     categoriesContainer.appendChild(allBox);
 
     for (let category of categories) {
