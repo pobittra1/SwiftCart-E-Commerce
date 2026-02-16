@@ -59,7 +59,7 @@ const displayAllProducts = (data) => {
 
                         <!-- buttons -->
                         <div class="flex md:flex-col lg:flex-row gap-3 pt-2">
-                            <button class="flex-1 border border-gray-300 py-2 rounded-lg text-sm">
+                            <button class="flex-1 border cursor-pointer border-gray-300 py-2 rounded-lg text-sm" onclick="productDetails('${eachCard.id}')">
                                 <i class="fa-regular fa-eye mr-1"></i> Details
                             </button>
 
@@ -75,3 +75,30 @@ const displayAllProducts = (data) => {
     });
 }
 loadAllProducts();
+
+
+
+//load products card details
+const productDetails = async (id) => {
+    const url = `https://fakestoreapi.com/products/${id}`;
+    const res = await fetch(url);
+    const result = await res.json();
+    console.log(result);
+    displayDetailsModal(result);
+}
+
+// display details modal
+const displayDetailsModal = (product) => {
+    //     const modal = document.createElement("dialog");
+    //     modal.classList.add("modal");
+    //     modal.innerHTML = `
+    //   <div class="modal-box">
+    //     <h3 class="font-bold">${product.title}</h3>
+    //     <p>${product.description}</p>
+    //     <button id="closeModal">Close</button>
+    //   </div>
+    // `;
+    //     document.body.appendChild(modal);
+
+    console.log(product);
+}
