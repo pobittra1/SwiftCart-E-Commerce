@@ -11,6 +11,10 @@ const displayEachCategory = (categories) => {
     //get the category level container
     const categoriesContainer = document.getElementById("categories-container");
     categoriesContainer.innerHTML = "";
+    // add all box button
+    const allBox = document.createElement("li");
+    allBox.innerHTML = `<a class="btn btn-outline">All</a>`;
+    categoriesContainer.appendChild(allBox);
 
     for (let category of categories) {
         //create category box
