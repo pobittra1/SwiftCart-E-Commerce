@@ -89,16 +89,18 @@ const productDetails = async (id) => {
 
 // display details modal
 const displayDetailsModal = (product) => {
-    //     const modal = document.createElement("dialog");
-    //     modal.classList.add("modal");
-    //     modal.innerHTML = `
-    //   <div class="modal-box">
-    //     <h3 class="font-bold">${product.title}</h3>
-    //     <p>${product.description}</p>
-    //     <button id="closeModal">Close</button>
-    //   </div>
-    // `;
-    //     document.body.appendChild(modal);
+    const detailsBox = document.getElementById("details-container");
+    detailsBox.innerHTML = `
+  <h2 class="text-lg font-bold mb-2">${product.title}</h2>
+  <p class="text-gray-600 text-sm mb-2">
+    ${product.description}
+  </p>
+  <p class="font-semibold mb-2">Price: $${product.price} | Rating: ${product.rating.rate} / 5</p>
+  <button class="btn btn-primary w-full">Add to Cart</button>
+
+
+    `;
+    document.getElementById("product_modal").showModal();
 
     console.log(product);
 }
