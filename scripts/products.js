@@ -8,7 +8,6 @@ const loadCategories = async () => {
 
 // display each category into levels
 const displayEachCategory = (categories) => {
-    console.log(categories);
     //get the category level container
     const categoriesContainer = document.getElementById("categories-container");
     categoriesContainer.innerHTML = "";
@@ -18,7 +17,6 @@ const displayEachCategory = (categories) => {
     categoriesContainer.appendChild(allBox);
 
     for (let category of categories) {
-        console.log(category);
         //create category box
         const categoryBox = document.createElement("li");
         categoryBox.innerHTML = `
@@ -85,7 +83,7 @@ const displayProductsByCategories = (products) => {
 
                         <!-- buttons -->
                         <div class="flex md:flex-col lg:flex-row gap-3 pt-2">
-                            <button class="flex-1 border cursor-pointer border-gray-300 py-2 rounded-lg text-sm">
+                            <button class="flex-1 border cursor-pointer border-gray-300 py-2 rounded-lg text-sm" onclick="productDetails('${product.id}')">
                                 <i class="fa-regular fa-eye mr-1"></i> Details
                             </button>
 
@@ -101,21 +99,5 @@ const displayProductsByCategories = (products) => {
     });
 }
 
-
-
-/*
-{
-    "id": 9,
-    "title": "WD 2TB Elements Portable External Hard Drive - USB 3.0 ",
-    "price": 64,
-    "description": "USB 3.0 and USB 2.0 Compatibility Fast data transfers Improve PC Performance High Capacity; Compatibility Formatted NTFS for Windows 10, Windows 8.1, Windows 7; Reformatting may be required for other operating systems; Compatibility may vary depending on user’s hardware configuration and operating system",
-    "category": "electronics",
-    "image": "https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_t.png",
-    "rating": {
-      "rate": 3.3,
-      "count": 203
-    }
-  },
-*/
 
 
