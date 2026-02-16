@@ -47,8 +47,8 @@
                 </div>
                 <div class="navbar-center hidden lg:flex">
                     <ul class="menu menu-horizontal px-1">
-                        <li class="text-blue-500 capitalize font-semibold"><a>home</a></li>
-                        <li class="text-slate-500 capitalize font-semibold"><a href="./products.html">products</a></li>
+                        <li class="text-slate-500 capitalize font-semibold"><a href="./index.html">home</a></li>
+                        <li class="text-blue-500 capitalize font-semibold"><a href="./products.html">products</a></li>
                         <li class="text-slate-500 capitalize font-semibold"><a>about</a></li>
                         <li class="text-slate-500 capitalize font-semibold"><a>contact</a></li>
                     </ul>
@@ -66,7 +66,7 @@
                         </div>
                         <ul tabindex="-1"
                             class="menu menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-52 p-2 shadow right-0">
-                            <li class="text-slate-500 capitalize font-semibold"><a>home</a></li>
+                            <li class="text-slate-500 capitalize font-semibold"><a href="./index.html">home</a></li>
                             <li class="text-blue-500 capitalize font-semibold"><a>products</a></li>
                             <li class="text-slate-500 capitalize font-semibold"><a>about</a></li>
                             <li class="text-slate-500 capitalize font-semibold"><a>contact</a></li>
@@ -92,6 +92,46 @@
                 <li><a href="" class="btn btn-outline">products</a></li>
                 <li><a href="" class="btn btn-outline">all</a></li>
             </ul>
+            <div id="cards-container" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- each card 1 -->
+                <div class="bg-white rounded-2xl  overflow-hidden">
+                    <!-- img -->
+                    <div class="overflow-hidden">
+                        <img src="./assets/trending/trending-one.jpg" alt="Product"
+                            class="w-full h-64 object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <!-- content -->
+                    <div class="p-5 space-y-3">
+                        <!-- category and rating -->
+                        <div class="flex justify-between text-sm text-gray-500">
+                            <span class="capitalize">Men's Clothing</span>
+                            <span class="text-yellow-500 font-medium">⭐ 4.8 (280)</span>
+                        </div>
+
+                        <!-- product name -->
+                        <h3 class="text-lg font-semibold capitalize hover:text-pink-600 transition">
+                            Mens Casual Drop Tshirt
+                        </h3>
+
+                        <!-- price -->
+                        <p class="font-bold text-xl">
+                            $25.10
+                        </p>
+
+                        <!-- buttons -->
+                        <div class="flex md:flex-col lg:flex-row gap-3 pt-2">
+                            <button class="flex-1 border border-gray-300 py-2 rounded-lg text-sm">
+                                <i class="fa-regular fa-eye mr-1"></i> Details
+                            </button>
+
+                            <button class="flex-1 btn btn-primary py-2">
+                                <i class="fa-solid fa-cart-shopping"></i> Add
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
         </section>
         <!-- products section end here -->
 
@@ -174,6 +214,9 @@
         </div>
     </footer>
     <!-- footer section end here -->
+
+    <!-- js file -->
+    <script src="./scripts/script.js"></script>
 </body>
 
 </html>
