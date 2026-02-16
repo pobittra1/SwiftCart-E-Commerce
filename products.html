@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwiftCart E-Commerce</title>
+
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="./style/style.css">
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- daisyui and tailwind css -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body>
+
+    <!-- header start here -->
+    <header class=" px-4">
+        <!-- navbar section start here -->
+        <nav>
+            <div class="navbar bg-base-100 shadow-sm">
+                <div class="navbar-start">
+                    <div class="dropdown">
+                        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+
+                        </div>
+                        <ul tabindex="-1"
+                            class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+
+                        </ul>
+                    </div>
+                    <a class="text-xl font-semibold">SwiftCart</a>
+                </div>
+                <div class="navbar-center hidden lg:flex">
+                    <ul class="menu menu-horizontal px-1">
+                        <li class="text-blue-500 capitalize font-semibold"><a>home</a></li>
+                        <li class="text-slate-500 capitalize font-semibold"><a href="./products.html">products</a></li>
+                        <li class="text-slate-500 capitalize font-semibold"><a>about</a></li>
+                        <li class="text-slate-500 capitalize font-semibold"><a>contact</a></li>
+                    </ul>
+                </div>
+                <div class="navbar-end">
+                    <a class="cursor-pointer"><i class="fa-solid fa-cart-shopping"></i></a>
+                    <!-- menubar icon -->
+                    <div class="dropdown dropdown-end lg:hidden">
+                        <div tabindex="0" class="btn btn-ghost">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h8m-8 6h16" />
+                            </svg>
+                        </div>
+                        <ul tabindex="-1"
+                            class="menu menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-52 p-2 shadow right-0">
+                            <li class="text-slate-500 capitalize font-semibold"><a>home</a></li>
+                            <li class="text-blue-500 capitalize font-semibold"><a>products</a></li>
+                            <li class="text-slate-500 capitalize font-semibold"><a>about</a></li>
+                            <li class="text-slate-500 capitalize font-semibold"><a>contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- navbar section end here -->
+    </header>
+    <!-- header section end here -->
+
+    <!-- main section start here -->
+    <main class="px-4 flex flex-col gap-20">
+
+        <!-- products section start here -->
+        <section id="products-container" class="flex flex-col items-center gap-4 mt-4">
+            <!-- title -->
+            <h2 class="text-2xl font-semibold">Our Products</h2>
+            <!-- categories -->
+            <ul id="categories-container" class="flex gap-2">
+                <li><a href="" class="btn btn-primary">all</a></li>
+                <li><a href="" class="btn btn-outline">products</a></li>
+                <li><a href="" class="btn btn-outline">all</a></li>
+            </ul>
+        </section>
+        <!-- products section end here -->
+
+        <!-- newsletter section start here -->
+        <section class="bg-gray-900 text-gray-300 py-14 px-6 md:px-16">
+
+            <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
+
+                <!-- news logo -->
+                <div>
+                    <h2 class="text-2xl font-bold text-blue-600 mb-4">SwiftCart</h2>
+                    <p class="text-sm text-slate-600">
+                        Your go-to destination for quality fashion and lifestyle products
+                        delivered fast and securely.
+                    </p>
+                </div>
+
+                <!-- quick links -->
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4 capitalize">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li class="text-slate-600 cursor-pointer">Home</li>
+                        <li class="text-slate-600 cursor-pointer">Product</li>
+                        <li class="text-slate-600 cursor-pointer">About</li>
+                        <li class="text-slate-600 cursor-pointer">Contact</li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4 capitalize">Support</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li class="text-slate-600 cursor-pointer">FAQ</li>
+                        <li class="text-slate-600 cursor-pointer">Shipping</li>
+                        <li class="text-slate-600 cursor-pointer">Returns</li>
+                        <li class="text-slate-600 cursor-pointer">Privacy Policy</li>
+                    </ul>
+                </div>
+
+                <!-- Subscribe -->
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4 uppercase">
+                        Subscribe to our Newsletter
+                    </h3>
+                    <p class="text-sm mb-4">
+                        The latest news, articles, and resources, sent to your inbox weekly.
+                    </p>
+
+                    <div class="flex flex-col lg:flex-row gap-3">
+                        <input type="email" placeholder="Enter your email"
+                            class="w-full px-4 py-2 rounded-lg text-gray-800 bg-white text-sm outline-none">
+                        <button class="bg-primary text-white px-5 py-2 rounded-lg transition">
+                            Subscribe
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- newsletter section end here -->
+
+    </main>
+    <!-- main section end here -->
+
+
+
+
+    <!-- footer section start here -->
+    <footer class="bg-gray-900 text-gray-400 py-6 px-4 mx-4">
+        <div
+            class="max-w-7xl mx-auto border-t border-gray-700 flex flex-col-reverse md:flex-row md:justify-between pt-6 text-sm">
+            <div class="mt-2 md:mt-2">© 2026 SwiftCart. All rights reserved.</div>
+            <div class="md:px-4 space-x-2">
+                <i class="fa-brands fa-facebook-f"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-linkedin-in"></i>
+                <i class="fa-solid fa-envelope"></i>
+            </div>
+        </div>
+    </footer>
+    <!-- footer section end here -->
+</body>
+
+</html>
