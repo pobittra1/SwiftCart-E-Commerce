@@ -63,8 +63,8 @@ const displayAllProducts = (data) => {
                                 <i class="fa-regular fa-eye mr-1"></i> Details
                             </button>
 
-                            <button class="flex-1 btn btn-primary py-2">
-                                <i class="fa-solid fa-cart-shopping"></i> Add
+                            <button class="flex-1 btn btn-primary py-2"  onclick="countAddToCart('${eachCard}')">
+                                <i class="fa-solid fa-cart-shopping"></i> Add To Cart
                             </button>
                         </div>
 
@@ -103,4 +103,21 @@ const displayDetailsModal = (product) => {
     document.getElementById("product_modal").showModal();
 
     console.log(product);
+}
+
+
+
+
+// implement optional part here
+
+// count add to cart here
+const countAddToCart = (product) => {
+    //get the value of cart icon
+    const cart = document.getElementById("shopping-cart");
+    let cartValue = parseInt(cart.innerText);
+    // increase value when click on this cart and set it
+    cartValue++
+    cart.innerText = cartValue;
+
+
 }

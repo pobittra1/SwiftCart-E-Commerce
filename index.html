@@ -52,9 +52,19 @@
                     </ul>
                 </div>
                 <div class="navbar-end">
-                    <a class="cursor-pointer"><i class="fa-solid fa-cart-shopping"></i></a>
+                    <div class="relative inline-block">
+                        <a class="cursor-pointer"><i class="fa-solid fa-cart-shopping"></i></a>
+
+                        <!-- optional badge -->
+                        <span id="shopping-cart" class="absolute -top-2 -right-3 
+                         bg-red-500 text-white 
+                         text-xs font-semibold 
+                         w-5 h-5 
+                         flex items-center justify-center 
+                         rounded-full">1</span>
+                    </div>
                     <!-- menubar icon -->
-                    <div class="dropdown dropdown-end lg:hidden">
+                    <div class=" dropdown dropdown-end lg:hidden">
                         <div tabindex="0" class="btn btn-ghost">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor">

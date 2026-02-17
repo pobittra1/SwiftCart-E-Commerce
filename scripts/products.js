@@ -101,3 +101,8 @@ const displayProductsByCategories = (products) => {
 
 
 
+
+
+
+
+
