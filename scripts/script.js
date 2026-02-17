@@ -12,6 +12,7 @@ const displayAllProducts = (data) => {
     cardsContainer.innerHTML = "";
 
     data.forEach(eachCard => {
+        console.log(eachCard);
         /*
           {
     "id": 1,
@@ -63,7 +64,7 @@ const displayAllProducts = (data) => {
                                 <i class="fa-regular fa-eye mr-1"></i> Details
                             </button>
 
-                            <button class="flex-1 btn btn-primary py-2"  onclick="countAddToCart('${eachCard}')">
+                            <button class="flex-1 btn btn-primary py-2"  onclick="getProductAndCountAddToCart('${eachCard.id}')">
                                 <i class="fa-solid fa-cart-shopping"></i> Add To Cart
                             </button>
                         </div>
@@ -110,30 +111,47 @@ const displayDetailsModal = (product) => {
 
 // implement optional part here
 
-// count add to cart here
-const countAddToCart = (product) => {
-    //get the value of cart icon
+
+// get product by id and count add to cart here
+const getProductAndCountAddToCart = async (id) => {
+
+    const url = `https://fakestoreapi.com/products/${id}`;
+    const res = await fetch(url);
+    const product = await res.json();
+    console.log(product);
+
     const cart = document.getElementById("shopping-cart");
-    let cartValue = parseInt(cart.innerText);
-
-    // increase value when click on this cart and set it
-
-    //set default cart
-    // localStorage.setItem("cart", JSON.stringify({ title: "Default Product", price: 29.99 }));
-
+    cart.innerText = 1;
     //get the cart from locaStorage
     let storedCart = JSON.parse(localStorage.getItem("cart")) || [];
 
     // store product in existing product
     storedCart.push(product);
 
+
     // save into localStogare
     localStorage.setItem("cart", JSON.stringify(storedCart));
-
-    cartValue = cartValue + storedCart.length;
-    cart.innerText = cartValue;
+    if (storedCart.length == 0) {
+        cart.innerText = 1;
+    }
+    else {
+        cart.innerText = 1 + storedCart.length;
+    }
 
 }
+
+window.addEventListener("DOMContentLoaded", () => {
+
+    //get the value of cart icon
+    const cart = document.getElementById("shopping-cart");
+    let storedCart = JSON.parse(localStorage.getItem("cart")) || [];
+    if (storedCart.length == 0) {
+        cart.innerText = 1;
+    }
+    else {
+        cart.innerText = 1 + storedCart.length;
+    }
+})
 
 // show added carts
 const showAddedCart = () => {
@@ -144,8 +162,7 @@ const showAddedCart = () => {
     let storedCart = JSON.parse(localStorage.getItem("cart")) || [];
 
     storedCart.forEach(eachCart => {
-        console.log(cartContainer);
-        console.log(typeof eachCart);
+
         // create cart box
         const cartBox = document.createElement("div");
         cartBox.classList.add(
@@ -163,6 +180,7 @@ const showAddedCart = () => {
             <button class="text-red-500 text-xs">Remove</button>
         
         `
-        console.log(cartBox);
+        cartContainer.append(cartBox);
+
     })
 }
