@@ -121,7 +121,6 @@ const getProductAndCountAddToCart = async (id) => {
     console.log(product);
 
     const cart = document.getElementById("shopping-cart");
-    cart.innerText = 1;
     //get the cart from locaStorage
     let storedCart = JSON.parse(localStorage.getItem("cart")) || [];
 
@@ -131,6 +130,8 @@ const getProductAndCountAddToCart = async (id) => {
 
     // save into localStogare
     localStorage.setItem("cart", JSON.stringify(storedCart));
+
+    // show carted number value and update it base on this condition
     if (storedCart.length == 0) {
         cart.innerText = 1;
     }
@@ -138,32 +139,10 @@ const getProductAndCountAddToCart = async (id) => {
         cart.innerText = 1 + storedCart.length;
     }
 
-}
 
-window.addEventListener("DOMContentLoaded", () => {
-
-    //get the value of cart icon
-    const cart = document.getElementById("shopping-cart");
-    let storedCart = JSON.parse(localStorage.getItem("cart")) || [];
-    if (storedCart.length == 0) {
-        cart.innerText = 1;
-    }
-    else {
-        cart.innerText = 1 + storedCart.length;
-    }
-})
-
-// show added carts
-const showAddedCart = () => {
-    //get added cart box
-    const cartContainer = document.getElementById("added-each-cart");
-
-    //get the value of localstorage
-    let storedCart = JSON.parse(localStorage.getItem("cart")) || [];
-
-    //get the cart dropdown and visible it
-    const cartDropdown = document.getElementById("cart-dropdown");
-    cartDropdown.classList.toggle("hidden");
+    //get added cart items box without default box
+    const cartContainer = document.getElementById("cart-items");
+    cartContainer.innerHTML = "";
 
     storedCart.forEach(eachCart => {
 
@@ -187,4 +166,28 @@ const showAddedCart = () => {
         cartContainer.append(cartBox);
 
     })
+
+}
+
+
+//when page load, after that carted number will be show here by this functionality
+window.addEventListener("DOMContentLoaded", () => {
+
+    //get the value of cart icon
+    const cart = document.getElementById("shopping-cart");
+    let storedCart = JSON.parse(localStorage.getItem("cart")) || [];
+    if (storedCart.length == 0) {
+        cart.innerText = 1;
+    }
+    else {
+        cart.innerText = 1 + storedCart.length;
+    }
+})
+
+// show added carts dropdown when click on cart icon
+const showAddedCart = () => {
+    //get the cart dropdown and visible it
+    const cartDropdown = document.getElementById("cart-dropdown");
+    cartDropdown.classList.toggle("hidden");
+
 }
