@@ -115,9 +115,8 @@ const countAddToCart = (product) => {
     //get the value of cart icon
     const cart = document.getElementById("shopping-cart");
     let cartValue = parseInt(cart.innerText);
+
     // increase value when click on this cart and set it
-    cartValue++
-    cart.innerText = cartValue;
 
     //set default cart
     // localStorage.setItem("cart", JSON.stringify({ title: "Default Product", price: 29.99 }));
@@ -131,6 +130,9 @@ const countAddToCart = (product) => {
     // save into localStogare
     localStorage.setItem("cart", JSON.stringify(storedCart));
 
+    cartValue = cartValue + storedCart.length;
+    cart.innerText = cartValue;
+
 }
 
 // show added carts
@@ -143,14 +145,24 @@ const showAddedCart = () => {
 
     storedCart.forEach(eachCart => {
         console.log(cartContainer);
-        cartContainer.innerHTML += `
-        <div class="flex  justify-between items-center border-b pb-2">
+        console.log(typeof eachCart);
+        // create cart box
+        const cartBox = document.createElement("div");
+        cartBox.classList.add(
+            "flex",
+            "justify-between",
+            "items-center",
+            "border-b",
+            "pb-2")
+        cartBox.innerHTML = `
+
             <div>
                 <p class="font-medium">${eachCart.title}</p>
                 <p class="text-gray-500 text-xs">$${eachCart.price}</p>
             </div>
             <button class="text-red-500 text-xs">Remove</button>
-        </div>
+        
         `
+        console.log(cartBox);
     })
 }
