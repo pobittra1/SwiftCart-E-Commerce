@@ -144,7 +144,8 @@ const getProductAndCountAddToCart = async (id) => {
     const cartContainer = document.getElementById("cart-items");
     cartContainer.innerHTML = "";
 
-    storedCart.forEach(eachCart => {
+    storedCart.forEach((eachCart, index) => {
+        console.log(index);
 
         // create cart box
         const cartBox = document.createElement("div");
@@ -160,9 +161,12 @@ const getProductAndCountAddToCart = async (id) => {
                 <p class="font-medium">${eachCart.title}</p>
                 <p class="text-gray-500 text-xs">$${eachCart.price}</p>
             </div>
-            <button class="text-red-500 text-xs">Remove</button>
+            <button class="text-red-500 text-xs cursor-pointer">Remove</button>
         
         `
+        //remove the function
+        // onclick="removeProduct(${index})" do it next time
+
         cartContainer.append(cartBox);
 
     })
@@ -191,3 +195,22 @@ const showAddedCart = () => {
     cartDropdown.classList.toggle("hidden");
 
 }
+
+
+
+
+/**
+ * i will do it next time.
+ * 
+const removeProducts = (index) => {
+    // get stored cart value from localStorage
+    const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    //remove indexing cart data from localStorage
+    storedCart.splice(index, 1)
+
+    // again save data after change and reload
+    localStorage.setItem("cart", JSON.stringify(storedCart));
+    location.reload();
+}
+*/
