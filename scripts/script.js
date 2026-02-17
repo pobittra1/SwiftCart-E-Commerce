@@ -161,6 +161,10 @@ const showAddedCart = () => {
     //get the value of localstorage
     let storedCart = JSON.parse(localStorage.getItem("cart")) || [];
 
+    //get the cart dropdown and visible it
+    const cartDropdown = document.getElementById("cart-dropdown");
+    cartDropdown.classList.toggle("hidden");
+
     storedCart.forEach(eachCart => {
 
         // create cart box
