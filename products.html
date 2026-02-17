@@ -64,6 +64,24 @@
                          w-5 h-5 
                          flex items-center justify-center 
                          rounded-full">1</span>
+                        <!-- Dropdown Cart -->
+                        <div id="cart-dropdown" class="absolute right-0 mt-3 w-64 
+                   bg-white shadow-lg rounded-lg p-4 z-50">
+
+                            <h3 class="font-semibold mb-2">Cart Items</h3>
+                            <!-- Default Item -->
+                            <div class="flex justify-between items-center border-b pb-2">
+                                <div>
+                                    <p class="font-medium">Sample Product</p>
+                                    <p class="text-gray-500 text-xs">$29.99</p>
+                                </div>
+                                <button class="text-red-500 text-xs">Remove</button>
+                            </div>
+                            <div id="cart-items" class="space-y-2 text-sm">
+                                <!-- Items will appear here -->
+                            </div>
+
+                        </div>
                     </div>
                     <!-- menubar icon -->
                     <div class="dropdown dropdown-end lg:hidden">
