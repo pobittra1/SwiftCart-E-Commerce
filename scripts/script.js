@@ -119,5 +119,38 @@ const countAddToCart = (product) => {
     cartValue++
     cart.innerText = cartValue;
 
+    //set default cart
+    // localStorage.setItem("cart", JSON.stringify({ title: "Default Product", price: 29.99 }));
 
+    //get the cart from locaStorage
+    let storedCart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    // store product in existing product
+    storedCart.push(product);
+
+    // save into localStogare
+    localStorage.setItem("cart", JSON.stringify(storedCart));
+
+}
+
+// show added carts
+const showAddedCart = () => {
+    //get added cart box
+    const cartContainer = document.getElementById("added-each-cart");
+
+    //get the value of localstorage
+    let storedCart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    storedCart.forEach(eachCart => {
+        console.log(cartContainer);
+        cartContainer.innerHTML += `
+        <div class="flex  justify-between items-center border-b pb-2">
+            <div>
+                <p class="font-medium">${eachCart.title}</p>
+                <p class="text-gray-500 text-xs">$${eachCart.price}</p>
+            </div>
+            <button class="text-red-500 text-xs">Remove</button>
+        </div>
+        `
+    })
 }
